@@ -21,8 +21,8 @@ function Navbar() {
 
                 <div className="flex gap-4 font-semibold">
                     <div className="hover:underline cursor-pointer">Postagens</div>
-                    <div className="hover:underline cursor-pointer">Temas</div>
-                    <div className="hover:underline cursor-pointer">Cadastrar Tema</div>
+                    <Link to='/temas' className="hover:underline cursor-pointer">Temas</Link>
+                    <Link to='/cadastrartema' className="hover:underline cursor-pointer">Cadastrar Tema</Link>
                     <div className="hover:underline cursor-pointer">Perfil</div>
                     <Link to='' onClick={logout} className="hover:underline cursor-pointer">Sair</Link>
                 </div>
