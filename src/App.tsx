@@ -24,8 +24,8 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/temas' element={<ListaTemas />} />
               <Route path='/cadastrartema' element={<FormularioTema />} />
-              <Route path='/editartema/1' element={<FormularioTema />} />
-              <Route path='/deletartema/1' element={<DeletarTema />} />
+              <Route path='/editartema/:id' element={<FormularioTema />} />
+              <Route path='/deletartema/:id' element={<DeletarTema />} />
             </Routes>
           </div>
           <Footer />

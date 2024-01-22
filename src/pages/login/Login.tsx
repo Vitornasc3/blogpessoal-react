@@ -63,7 +63,7 @@ function Login() {
                         strokeColor="white"
                         strokeWidth="5"
                         animationDuration="0.75"
-                        width="24"
+                        width="28"
                         visible={true}
                     /> :
                         <span>Entrar</span>

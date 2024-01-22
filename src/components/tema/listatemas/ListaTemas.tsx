@@ -8,13 +8,13 @@ import { DNA } from "react-loader-spinner";
 
 function ListaTemas() {
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-const [temas, setTemas] = useState<Tema[]>([]);
+  const [temas, setTemas] = useState<Tema[]>([]);
 
-const { usuario, handleLogout } = useContext(AuthContext)
+  const { usuario, handleLogout } = useContext(AuthContext)
 
-const token = usuario.token;
+  const token = usuario.token;
 
   async function buscarTemas() {
     try {
