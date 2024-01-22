@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/components/tema/formtema/FormularioTema.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
