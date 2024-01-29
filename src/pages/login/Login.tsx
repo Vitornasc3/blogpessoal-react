@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { RotatingLines } from "react-loader-spinner";
+import './Login.css';
 
 function Login() {
 
@@ -33,7 +34,7 @@ function Login() {
     }
 
     return (
-        <div className="text-white bg-gray-700 grid grid-cols-2 place-items-center h-screen font-semibold">
+        <div className="text-white bg-gray-700 grid lg:grid-cols-2 place-items-center h-screen font-semibold grid-cols-1">
 
             <form className="flex flex-col items-center justify-center gap-4 w-1/3" onSubmit={login}>
                 <h1 className="text-5xl">Logar</h1>
@@ -69,8 +70,13 @@ function Login() {
                         <span>Entrar</span>
                     }
                 </button>
-                <p className="py-5 border-t-2 border-y-gray-200">Ainda não tem uma conta? <Link to='/cadastro' className="text-violet-500 hover:underline">Cadastre-se</Link></p>
+
+                <p className="py-5 border-t-2 border-y-gray-200">Ainda não tem uma conta?
+                    <Link to='/cadastro' className="text-violet-500 hover:underline"> Cadastre-se</Link>
+                </p>
             </form>
+
+            <div className="fundoLogin hidden lg:block"></div>
 
         </div>
     )

@@ -21,7 +21,7 @@ function Cadastro() {
   })
 
   useEffect(() => {
-    if(usuario.id !== 0){
+    if (usuario.id !== 0) {
       retornar()
     }
   }, [usuario])
@@ -44,8 +44,8 @@ function Cadastro() {
 
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    
-    if(confirmaSenha === usuario.senha && usuario.senha.length >= 8){
+
+    if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
 
       setIsLoading(true)
 
@@ -55,17 +55,17 @@ function Cadastro() {
       } catch (error) {
         alert('Erro ao cadastrar usuário.')
       }
-    }else{
+    } else {
       alert('Dados estão incosistentes. Verifique as informações do cadastro')
-      setUsuario({...usuario, senha: ''})
+      setUsuario({ ...usuario, senha: '' })
       setConfirmaSenha('')
     }
     setIsLoading(false)
   }
 
   return (
-    <div className="grid text-white bg-gray-700 grid-cols-2 place-items-center h-screen font-semibold">
-      <div>
+    <div className="grid text-white bg-gray-700 lg:grid-cols-2 place-items-center h-screen font-semibold grid-cols-1">
+      <div className="fundoLogin hidden lg:block">
 
       </div>
       <form className="flex flex-col items-center justify-center gap-4 w-2/3" onSubmit={cadastrarNovoUsuario}>
@@ -110,14 +110,14 @@ function Cadastro() {
           <button className="rounded text-white border-white border-solid border-2 px-4 py-2 hover:bg-violet-600" onClick={retornar}>Cancelar</button>
           <button type="submit" className="flex justify-center rounded text-violet-600 bg-white border-white border-solid border-2 px-4 py-2 hover:bg-violet-600  hover:text-white">
             {isLoading ? <RotatingLines
-            strokeColor="white"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="24"
-            visible={true}
+              strokeColor="white"
+              strokeWidth="5"
+              animationDuration="0.75"
+              width="24"
+              visible={true}
             /> :
-            <span>Cadastrar</span>
-          }
+              <span>Cadastrar</span>
+            }
           </button>
         </div>
       </form>
