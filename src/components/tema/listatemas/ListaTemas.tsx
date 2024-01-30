@@ -5,6 +5,7 @@ import Tema from "../../../models/Tema";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
+import { ToastAlerts } from "../../../utils/ToastAlerts";
 
 function ListaTemas() {
 
@@ -23,7 +24,7 @@ function ListaTemas() {
       })
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('Tempo de sessão expirou!')
+        ToastAlerts('Tempo de sessão expirou!', 'info')
         handleLogout()
       }
     }
@@ -31,7 +32,7 @@ function ListaTemas() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado')
+      ToastAlerts('Você precisa estar logado', 'info')
       navigate('/login')
     }
   }, [token])

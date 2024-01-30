@@ -5,6 +5,7 @@ import Postagem from "../../../models/Postagem";
 import Tema from "../../../models/Tema";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerts } from "../../../utils/ToastAlerts";
 
 function FormularioPostagem() {
 
@@ -39,7 +40,7 @@ function FormularioPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Tempo de sessão expirou!')
+                ToastAlerts('Tempo de sessão expirou!', 'info')
                 handleLogout()
             }
         }
@@ -52,7 +53,7 @@ function FormularioPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Tempo de sessão expirou!')
+                ToastAlerts('Tempo de sessão expirou!', 'info')
                 handleLogout()
             }
         }
@@ -68,7 +69,7 @@ function FormularioPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerts('Você precisa estar logado', 'info')
             navigate('/')
         }
     }, [token])
@@ -109,13 +110,13 @@ function FormularioPostagem() {
                 await atualizar(`/postagens`, postagem, setPostagem, {
                     headers: { 'Authorization': token }
                 })
-                alert('Postagem atualizada com sucesso!')
+                ToastAlerts('Postagem atualizada com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('O token expirou.')
+                    ToastAlerts('O token expirou.', 'info')
                     handleLogout
                 } else {
-                    alert('Erro ao atualizar a postagem.')
+                    ToastAlerts('Erro ao atualizar a postagem.', 'erro')
                 }
             }
         } else {
@@ -123,13 +124,13 @@ function FormularioPostagem() {
                 await cadastrar(`/postagens`, postagem, setPostagem, {
                     headers: { 'Authorization': token }
                 })
-                alert('Postagem cadastrada com sucesso!')
+                ToastAlerts('Postagem cadastrada com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('O token expirou.')
+                    ToastAlerts('O token expirou.', 'info')
                     handleLogout
                 } else {
-                    alert('Erro ao cadastrar a postagem.')
+                    ToastAlerts('Erro ao cadastrar a postagem.', 'erro')
                 }
             }
         }

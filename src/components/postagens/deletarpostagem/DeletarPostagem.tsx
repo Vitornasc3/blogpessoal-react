@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Postagem from "../../../models/Postagem";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar, deletar } from "../../../services/Service";
+import { ToastAlerts } from "../../../utils/ToastAlerts";
 
 function DeletarPostagem() {
 
@@ -26,7 +27,7 @@ function DeletarPostagem() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('Tempo de sessão expirou!')
+                ToastAlerts('Tempo de sessão expirou!', '')
                 handleLogout()
             }
         }
@@ -34,7 +35,7 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerts('Você precisa estar logado', '')
             navigate('/')
         }
     }, [token])
@@ -57,13 +58,13 @@ function DeletarPostagem() {
             await deletar(`/postagens/${id}`, {
                 headers: { 'Authorization': token }
             })
-            alert('Postagem excluída com sucesso!')
+            ToastAlerts('Postagem excluída com sucesso!', 'sucesso')
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou.')
+                ToastAlerts('O token expirou.', 'info')
                 handleLogout
             } else {
-                alert('Erro ao excluir postagem.')
+                ToastAlerts('Erro ao excluir postagem.', 'erro')
             }
         }
 

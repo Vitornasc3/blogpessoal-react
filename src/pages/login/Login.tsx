@@ -71,8 +71,8 @@ function Login() {
                     }
                 </button>
 
-                <p className="py-5 border-t-2 border-y-gray-200">Ainda não tem uma conta?
-                    <Link to='/cadastro' className="text-violet-500 hover:underline"> Cadastre-se</Link>
+                <p className="py-5 border-t-2 border-y-gray-200">Ainda não tem uma conta? 
+                    <Link to='/cadastro' className="text-violet-500 hover:underline ml-1">Cadastre-se</Link>
                 </p>
             </form>
 
