@@ -10,7 +10,7 @@ function CardPostagem({ post }: CardPostagemProps) {
         <div className="rounded-2xl flex flex-col overflow-hidden justify-between bg-slate-200 text-slate-950 shadow-2xl">
             <div>
                 <div className="flex items-center gap-4 w-full py-2 px-4 bg-slate-900 text-slate-100">
-                    <img src={post.usuario?.foto} alt="" className="flex justify-center p-1 border-2 border-solid border-blue-500 w-10 rounded-full overflow-hidden"/>
+                    <img src={post.usuario?.foto} alt="" className="flex justify-center p-1 border-2 border-solid border-blue-500 w-10 rounded-full overflow-hidden bg-white"/>
                     <h3 className='text-lg font-bold text-center uppercase'>{post.usuario?.nome}</h3>
                 </div>
                 <div className="p-4">
