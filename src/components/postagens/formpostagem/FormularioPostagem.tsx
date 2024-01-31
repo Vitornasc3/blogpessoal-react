@@ -142,13 +142,13 @@ function FormularioPostagem() {
     const carregandoTema = tema.descricao === '';
 
     return (
-        <div className="container flex flex-col mx-auto items-center">
+        <div className="container flex flex-col mx-auto items-center text-slate-900">
             <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Postagem' : 'Cadastrar Postagem'}</h1>
 
             <form className="flex gap-4 flex-col p-6 text-lg w-2/4 items-center justify-center" onSubmit={gerarNovaPostagem}>
                 <div className="flex flex-col w-full gap-2">
                     <label>Titulo da Postagem</label>
-                    <input id="titulo" name="titulo" className="border-2 border-solid p-2 hover:border-gray-400" type="text"
+                    <input id="titulo" name="titulo" className="border-2 border-solid p-2 hover:border-gray-400 text-slate-900" type="text"
                         placeholder="Título"
                         value={postagem.titulo}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
@@ -156,7 +156,7 @@ function FormularioPostagem() {
                 </div>
                 <div className="flex flex-col w-full gap-2">
                     <label>Texto da Postagem</label>
-                    <input id="texto" name="texto" className="border-2 border-solid p-2 hover:border-gray-400" type="text"
+                    <input id="texto" name="texto" className="border-2 border-solid p-2 hover:border-gray-400 text-slate-900" type="text"
                         placeholder="Texto da postagem"
                         value={postagem.texto}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -166,8 +166,8 @@ function FormularioPostagem() {
                     <p>
                         Tema da Postagem
                     </p>
-                    <select name="tema" id="tema" className="border p-2 border-slate-800 rounded" onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
-                        <option value="" selected disabled>Selecione um tema</option>
+                    <select name="tema" id="tema" className="border p-2 border-slate-800 rounded text-slate-900" onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
+                        <option value="tema" selected disabled>Selecione um tema</option>
 
                         {temas.map((tema) => (
                             <>
@@ -177,7 +177,7 @@ function FormularioPostagem() {
                     </select>
                 </div>
 
-                <button disabled={carregandoTema} type="submit" className="flex justify-center text-white p-2 bg-gray-600 border-solid border-2 border-white hover:bg-violet-600 w-1/2 rounded text-lg">
+                <button disabled={carregandoTema} type="submit" className="flex justify-center text-white p-2 bg-gray-600 hover:bg-slate-900 w-1/2 rounded text-lg">
                     {carregandoTema ? <RotatingLines
                             strokeColor="white"
                             strokeWidth="5"

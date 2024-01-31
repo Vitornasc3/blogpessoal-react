@@ -19,10 +19,10 @@ function Perfil() {
 
     return (
         <div className="py-16">
-            <div className="mx-auto rounded-3xl overflow-hidden container font-semibold">
+            <div className="mx-auto rounded-3xl overflow-hidden container font-semibold shadow-2xl">
                 <img className="w-full h-80 object-cover border-white" src={loginLogo} alt="Capa do perfil" />
                 <img className="border-8 border-white bg-white rounded-full size-40 mt-[-8rem] z-10 relative m-auto" src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} />
-                <div className="border border-t-8 bg-slate-700 relative mt-[-6rem] h-72 flex flex-col text-white text-2xl items-center justify-center">
+                <div className=" border-t-8 bg-slate-900 relative mt-[-6rem] h-72 flex flex-col text-white text-2xl items-center justify-center">
                     <p>Nome: {usuario.nome}</p>
                     <p>Email: {usuario.usuario}</p>
                 </div>

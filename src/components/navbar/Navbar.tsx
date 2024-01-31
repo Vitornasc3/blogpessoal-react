@@ -2,6 +2,7 @@ import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ToastAlerts } from "../../utils/ToastAlerts";
+import { DoorOpen, FireExtinguisher, Layout, Notebook, PencilSimpleLine, UserCircle } from "@phosphor-icons/react";
 
 function Navbar() {
 
@@ -19,16 +20,17 @@ function Navbar() {
 
     if (usuario.token !== '') {
         navbarComponent = (
-            <nav className="bg-violet-700 flex justify-center text-white py-3 border-b-2">
+            <nav className="bg-slate-900 flex justify-center text-white py-3 border-b-2 sticky top-0">
                 <div className="container flex justify-between gap-4">
-                    <Link to='/home' className="font-bold text-2xl">Blog Pessoal</Link>
+                    <Link to='/home' className="font-bold text-2xl hover:text-violet-700">Blog Pessoal</Link>
 
                     <div className="flex gap-6 font-semibold mt-2">
-                        <Link to='/postagens' className="hover:underline cursor-pointer">Postagens</Link>
-                        <Link to='/temas' className="hover:underline cursor-pointer">Temas</Link>
-                        <Link to='/cadastrartema' className="hover:underline cursor-pointer">Cadastrar Tema</Link>
-                        <Link to='/perfil' className="hover:underline cursor-pointer">Perfil</Link>
-                        <Link to='' onClick={logout} className="hover:underline cursor-pointer">Sair</Link>
+                        <Link to='/postagens' className="hover:text-violet-700 cursor-pointer flex gap-2">Postagens <Notebook size={22} /></Link>
+                        <Link to='/temas' className="hover:text-violet-700 cursor-pointer flex gap-2">Temas <Layout size={22} /></Link>
+                        <Link to='/cadastrartema' className="hover:text-violet-700 cursor-pointer flex gap-2">Cadastrar Tema 
+                        <PencilSimpleLine size={22} /></Link>
+                        <Link to='/perfil' className="hover:text-violet-700 cursor-pointer flex gap-2">Perfil<UserCircle size={22} /></Link>
+                        <Link to='' onClick={logout} className="hover:text-violet-700 cursor-pointer flex gap-2">Sair<DoorOpen size={22} /></Link>
                     </div>
                 </div>
             </nav >)

@@ -77,18 +77,18 @@ function DeletarTema() {
         <div className="w-1/3 mx-auto">
             <h1 className='text-4xl text-center my-4'>Deletar Tema</h1>
             <p className='text-center mb-4'>Você tem certeza que deseja apagar o tema a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <h1 className='py-2 px-6 bg-violet-600 text-white font-bold text-2xl'>
+            <div className='flex flex-col rounded-2xl overflow-hidden justify-between shadow-2xl'>
+                <h1 className='py-2 px-6 bg-slate-900 text-white font-bold text-2xl'>
                     Tema
                 </h1>
                 <p className='p-8 text-3xl bg-slate-100 h-full font-semibold'>{tema.descricao}</p>
-                <div className="flex bg-slate-500 justify-center font-semibold">
-                    <button className="flex justify-center text-violet-600 bg-white border-white border-solid px-4 
-                    py-2 hover:bg-violet-600  hover:text-white w-full"
+                <div className="flex bg-slate-500 justify-center font-semibold text-lg">
+                    <button className="flex justify-center text-slate-900 bg-white border-white border-solid px-4 
+                    py-2 hover:bg-slate-900  hover:text-white w-full"
                         onClick={retornar}>Não</button>
 
                     <button className="rounded text-white border-white border-solid px-4 py-2 
-                    hover:bg-violet-600 w-full flex justify-center"
+                    hover:bg-slate-900 w-full flex justify-center"
                         onClick={deletarTema}>
                         {isLoading ?
                             <RotatingLines

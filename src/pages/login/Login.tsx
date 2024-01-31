@@ -34,7 +34,7 @@ function Login() {
     }
 
     return (
-        <div className="text-white bg-gray-700 grid lg:grid-cols-2 place-items-center h-screen font-semibold grid-cols-1">
+        <div className="text-white bg-slate-900 grid lg:grid-cols-2 place-items-center h-screen font-semibold grid-cols-1">
 
             <form className="flex flex-col items-center justify-center gap-4 w-1/3" onSubmit={login}>
                 <h1 className="text-5xl">Logar</h1>
@@ -58,7 +58,7 @@ function Login() {
                         value={usuarioLogin.senha}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                 </div>
-                <button className="flex justify-center text-white p-1 bg-gray-600 border-solid border-2 border-white hover:bg-violet-600 w-1/2 rounded text-lg"
+                <button className="flex justify-center text-white p-1 bg-gray-600 border-solid border-2 border-white hover:bg-slate-900 w-1/2 rounded text-lg"
                     type="submit">
                     {isLoading ? <RotatingLines
                         strokeColor="white"

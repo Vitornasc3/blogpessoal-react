@@ -1,20 +1,22 @@
+import { Notebook } from "@phosphor-icons/react"
 import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens"
 import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem"
+import { Link } from "react-router-dom"
 
 function Home() {
     return (
         <>
-            <div id="container" className="bg-gray-700 flex justify-center">
-                <div id="subcontainer" className="container grid lg:grid-cols-2 text-white grid-cols-1">
+            <div id="container" className="flex justify-center">
+                <div id="subcontainer" className="container grid lg:grid-cols-2 text-slate-800 grid-cols-1">
                     <div id="texto" className="flex flex-col gap-4 items-center justify-center py-4">
                         <h2 className="text-5xl font-bold">Seja bem-vindo!</h2>
                         <p className="text-xl">Expresse aqui seus pensamentos e opiniões</p>
 
                         <div className="flex justify-around gap-4">
                             <ModalPostagem />
-                            <div className="rounded font-semibold text-gray-600 bg-white border-white border-solid border-2 px-4 py-2 hover:bg-violet-600  hover:text-white cursor-pointer">
-                                Ver Postagens
-                            </div>
+                            <Link to={`/postagens`} className="border-2 border-white flex flex-row rounded gap-2 font-semibold text-slate-800 bg-white px-4 py-2 hover:bg-slate-800  hover:text-violet-700 cursor-pointer hover:border-violet-700 hover:border-2">
+                                Ver Postagens <Notebook size={24} />
+                            </Link>
                         </div>
                     </div>
 

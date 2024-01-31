@@ -108,8 +108,8 @@ function Cadastro() {
         </div>
 
         <div className="grid grid-cols-2 gap-10 w-full text-lg">
-          <button className="rounded text-white border-white border-solid border-2 px-4 py-2 hover:bg-violet-600" onClick={retornar}>Cancelar</button>
-          <button type="submit" className="flex justify-center rounded text-violet-600 bg-white border-white border-solid border-2 px-4 py-2 hover:bg-violet-600  hover:text-white">
+          <button className="rounded text-white border-white border-solid border-2 px-4 py-2 hover:bg-slate-900" onClick={retornar}>Cancelar</button>
+          <button type="submit" className="flex justify-center rounded text-slate-900 bg-white border-white border-solid border-2 px-4 py-2 hover:bg-slate-900  hover:text-white">
             {isLoading ? <RotatingLines
               strokeColor="white"
               strokeWidth="5"
