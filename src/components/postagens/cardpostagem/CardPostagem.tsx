@@ -13,9 +13,9 @@ function CardPostagem({ post }: CardPostagemProps) {
                     <img src={post.usuario?.foto} alt="" className="flex justify-center p-1 border-2 border-solid border-blue-500 w-10 rounded-full overflow-hidden bg-white"/>
                     <h3 className='text-lg font-bold text-center uppercase'>{post.usuario?.nome}</h3>
                 </div>
-                <div className="p-4">
-                    <h4 className='text-lg font-semibold uppercase'>Título</h4>
-                    <p>{post.texto}</p>
+                <div className="p-4 font-semibold">
+                    <p>Título: {post.titulo}</p>
+                    <p>Texto: {post.texto}</p>
                     <p>Tema: {post.tema?.descricao}</p>
                     <p>Data: {new Intl.DateTimeFormat(undefined, {
                         dateStyle: 'full',
